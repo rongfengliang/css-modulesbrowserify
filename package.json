@@ -1,0 +1,17 @@
+{
+  "name": "css-modules",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^15.0.0",
+    "css-modulesify": "^0.28.0",
+    "domify": "^1.4.0",
+    "uglifyify": "^4.0.5"
+  },
+  "scripts": {
+    "build": "node app.js",
+    "run":"live-server",
+    "start":"yarn run build && yarn run run"
+  }
+}
