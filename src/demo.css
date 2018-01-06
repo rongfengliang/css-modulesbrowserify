@@ -1,0 +1,13 @@
+.appdemo{
+    font-size: 40px;
+    text-align: center;
+    background-color: cornflowerblue;
+}
+.className2 {
+    color: green;
+    background: red;
+  }
+  .otherClassName2 {
+    composes: appdemo;
+    color: rgb(24, 24, 2);
+  }

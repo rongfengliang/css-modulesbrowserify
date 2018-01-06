@@ -2,9 +2,12 @@
 module.exports=parse;var bugTestDiv,innerHTMLBug=!1;"undefined"!=typeof document&&((bugTestDiv=document.createElement("div")).innerHTML='  <link/><table></table><a href="/a">a</a><input type="checkbox"/>',innerHTMLBug=!bugTestDiv.getElementsByTagName("link").length,bugTestDiv=void 0);var map={legend:[1,"<fieldset>","</fieldset>"],tr:[2,"<table><tbody>","</tbody></table>"],col:[2,"<table><tbody></tbody><colgroup>","</colgroup></table>"],_default:innerHTMLBug?[1,"X<div>","</div>"]:[0,"",""]};map.td=map.th=[3,"<table><tbody><tr>","</tr></tbody></table>"],map.option=map.optgroup=[1,'<select multiple="multiple">',"</select>"],map.thead=map.tbody=map.colgroup=map.caption=map.tfoot=[1,"<table>","</table>"],map.polyline=map.ellipse=map.polygon=map.circle=map.text=map.line=map.path=map.rect=map.g=[1,'<svg xmlns="http://www.w3.org/2000/svg" version="1.1">',"</svg>"];function parse(e,t){if("string"!=typeof e)throw new TypeError("String expected");t||(t=document);var a=/<([\w:]+)/.exec(e);if(!a)return t.createTextNode(e);e=e.replace(/^\s+|\s+$/g,"");var l=a[1];if("body"==l){return(r=t.createElement("html")).innerHTML=e,r.removeChild(r.lastChild)}var r,i=map[l]||map._default,p=i[0],o=i[1],n=i[2];for((r=t.createElement("div")).innerHTML=o+e+n;p--;)r=r.lastChild;if(r.firstChild==r.lastChild)return r.removeChild(r.firstChild);for(var d=t.createDocumentFragment();r.firstChild;)d.appendChild(r.removeChild(r.firstChild));return d}
 
 },{}],2:[function(require,module,exports){
-module.exports={appdemo:"_D_D_src_app__appdemo"};
+module.exports={appdemo:"_appdemo_18cbg_1",className:"_className_18cbg_11",otherClassName:"_otherClassName_18cbg_19 _className_18cbg_11"};
 
 },{}],3:[function(require,module,exports){
-const styles=require("./app.css"),domify=require("domify"),html=`<div class="${styles.appdemo}">this is a demo app</div>`,container=document.querySelector("#container");container.appendChild(domify(html));
+module.exports={appdemo:"_appdemo_tfrpm_1",className2:"_className2_tfrpm_11",otherClassName2:"_otherClassName2_tfrpm_19 _appdemo_tfrpm_1"};
 
-},{"./app.css":2,"domify":1}]},{},[3]);
+},{}],4:[function(require,module,exports){
+const styles=require("./app.css"),styles2=require("./demo.css"),domify=require("domify"),html=`<div class="${styles2.appdemo}">\n  <div class="${styles2.otherClassName2}">\n    ffff\n  </div>\n</div>`,container=document.querySelector("#container");container.appendChild(domify(html));
+
+},{"./app.css":2,"./demo.css":3,"domify":1}]},{},[4]);

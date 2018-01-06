@@ -3,3 +3,11 @@
     text-align: center;
     background-color: cornflowerblue;
 }
+.className {
+    color: green;
+    background: red;
+  }
+  .otherClassName {
+    composes: className;
+    color: yellow;
+  }
